@@ -49,6 +49,9 @@
           <hr>
           <section>
             <h4 class="text-muted">PLAYLISTS</h4>
+            <p class="playlist-item" ng-repeat="playlist in playlists">
+                <a>{{playlist.name}}</a>
+            </p>
             <p>
               <a ui-sref="playlist" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
             </p>

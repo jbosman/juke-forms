@@ -1,4 +1,14 @@
-<div>
+	<div>
+	<input ng-model="playlistSearch">
+  	</div>
+  	<div>{{playlistSearch}}</div>
+
+	<div class="list-group-item" ng-repeat="playlist in playlists">
+    <a>{{ playlist.name }}</a>
+    </div>
+
+
+
   	<div class="well">
 	  <form class="form-horizontal" name="newPlaylist" ng-submit="submitForm()">
 	    <fieldset>
@@ -6,7 +16,7 @@
 	      <div class="form-group">
 	        <label class="col-xs-2 control-label">Name</label>
 	        <div class="col-xs-10">
-	          <input class="form-control" type="text" ng-model="nameModel.name" name="nameField" required ng-minlength=16>
+	          <input class="form-control" type="text" ng-model="nameModel.name" name="nameField" required ng-minlength=3>
 	        </div>
 	      </div>
 	      <div class="form-group">
@@ -16,9 +26,9 @@
 	      </div>
 	    </fieldset>
 	    <div>
-	    <span> 
+	    <!-- <span> 
 	    {{newPlaylist.$submitted}} : {{nameModel | json}} is it valid? {{newPlaylist.nameField.$valid}}
-	    </span>
+	    </span> -->
 	    <span ng-show="newPlaylist.$submitted"> 
 	    Form has been submitted!
 	    </span>
