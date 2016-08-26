@@ -1,7 +1,7 @@
 'use strict';
 
 
-juke.controller('PlaylistCtrl', function ($scope, $rootScope, PlaylistFactory) {
+juke.controller('PlaylistCtrl', function ($scope, $rootScope, PlaylistFactory, $state) {
 	
 
 	$scope.submitForm = function(){
@@ -12,6 +12,7 @@ juke.controller('PlaylistCtrl', function ($scope, $rootScope, PlaylistFactory) {
 		.then( function(playlists){
 			$scope.playlists = playlists;
 			$scope.nameModel.name = null;
+			$state.go('albums');
 		})
 
 		

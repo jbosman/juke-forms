@@ -22,7 +22,6 @@ juke.factory('PlaylistFactory', function ($http) {
 	}
 
 	PlaylistFactory.fetchById = function(id){
-		console.log("made it to fetch by id");
 		return $http.get('/api/playlists/' + id)
 	}
 
