@@ -14,12 +14,16 @@ juke.factory('PlaylistFactory', function ($http) {
 	}
 
 	PlaylistFactory.fetchAll = function(data){
-		console.log("got here")
 		return $http.get('/api/playlists')
 		.then(function(res){
 			angular.copy(res.data, cachedPlaylists);
 			return cachedPlaylists;
 		});
+	}
+
+	PlaylistFactory.fetchById = function(id){
+		console.log("made it to fetch by id");
+		return $http.get('/api/playlists/' + id)
 	}
 
 
